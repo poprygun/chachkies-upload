@@ -1,0 +1,61 @@
+plugins {
+    id 'org.springframework.boot' version '2.5.4'
+    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+    id 'java'
+    id 'org.openapi.generator' version '4.3.1'
+}
+
+group = 'io.microsamples.openapi'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+
+    implementation 'org.springdoc:springdoc-openapi-ui:1.5.10'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'javax.validation:validation-api:2.0.1.Final'
+    implementation 'org.jeasy:easy-random-core:5.0.0'
+    implementation 'org.openapitools:jackson-databind-nullable:0.2.1'
+    implementation 'io.swagger:swagger-annotations:1.6.2'
+
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+openApiGenerate {
+    generatorName = "spring"
+    invokerPackage = "io.microsamples.openapi.upload"
+    groupId = "io.microsamples.openapi.upload"
+    apiPackage = "io.microsamples.openapi.upload.api"
+    modelPackage = "io.microsamples.openapi.upload.model"
+    generateApiTests = false
+//	outputDir = generatedSourcesDir
+    inputSpec = "${projectDir}/config/api.yml"
+    ignoreFileOverride = "${projectDir}/.openapi-generator-ignore"
+    outputDir = "${project.buildDir}/generated-sources"
+    configOptions = [
+            dateLibrary: "java8",
+            apiSuffix: "Chachkie",
+            serviceInterface: "true",
+            enumPropertyNaming: "UPPERCASE",
+            modelMutable: "true",
+            serviceImplementation: "true",
+            modelDocs: "false",
+            swaggerAnnotations: "false"
+    ]
+}
+
+sourceSets {
+    main {
+        java {
+            srcDir "${project.buildDir}/generated-sources/src/main/java"
+        }
+    }
+}
+
+test {
+    useJUnitPlatform()
+}
