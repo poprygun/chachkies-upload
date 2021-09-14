@@ -1,10 +1,10 @@
-package io.microsamples.openapi.upload;
+package io.microsamples.accelerator.chachkies;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class ChachkieUploadApplicationTests {
+class ChachkiesApiApplicationTests {
 
 	@Test
 	void contextLoads() {

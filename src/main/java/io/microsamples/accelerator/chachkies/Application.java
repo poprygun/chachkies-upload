@@ -1,4 +1,4 @@
-package io.microsamples.openapi.upload;
+package io.microsamples.accelerator.chachkies;
 
 import com.fasterxml.jackson.databind.Module;
 import org.openapitools.jackson.nullable.JsonNullableModule;
@@ -7,11 +7,11 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
-@SpringBootApplication(scanBasePackages = {"io.microsamples.openapi.upload", "io.microsamples.openapi.upload.api" })
-public class ChachkieUploadApplication {
+@SpringBootApplication
+public class Application {
 
 	public static void main(String[] args) {
-		SpringApplication.run(ChachkieUploadApplication.class, args);
+		SpringApplication.run(Application.class, args);
 	}
 
 	@Bean

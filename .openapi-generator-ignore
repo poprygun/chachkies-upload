@@ -8,8 +8,6 @@
 # You can make changes and tell OpenAPI Generator to ignore just this file by uncommenting the following line:
 #ApiClient.cs
 **/OpenAPI2SpringBoot.java
-**/HomeController.java
-**/OpenAPIDocumentationConfig.java
 
 # You can match any string of characters against a directory, file or extension with a single asterisk (*):
 #foo/*/qux
