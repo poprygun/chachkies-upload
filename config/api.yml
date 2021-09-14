@@ -21,6 +21,28 @@ tags:
       description: Find out more
       url: http://swagger.io
 paths:
+  /chachkies/{chachkieId}:
+    get:
+      tags:
+        - chachkie
+      summary:
+        "Chachkie from S3 Bucket"
+      operationId: "getChachkie"
+      parameters:
+        - name: chachkieId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: File from S3 bucket
+          content:
+            application/pdf:
+              schema:
+                type: string
+                format: binary
+
   /chachkies:
     post:
       tags:
@@ -59,7 +81,7 @@ paths:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/Chachkie'
+                  type: string
         default:
           description: unexpected error
           content:

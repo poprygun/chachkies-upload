@@ -11,9 +11,9 @@ spring.servlet.multipart.max-request-size: 10MB
 server.error.include-message: always
 
 minio:
-  key: "Q3AM3UQ867SPQQA43P2F"
-  secret: "uf+tfteSlswRu7BJ86wekitnifILbZam1KYY3TG"
-  url: "https://play.min.io"
+  key: "minioadmin"
+  secret: "minioadmin"
+  url: "http://127.0.0.1:9000"
   bucket: "chachkies"
 
 management:
