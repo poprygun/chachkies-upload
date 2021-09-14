@@ -3,7 +3,18 @@ springdoc.packagesToScan: io.microsamples.accelerator.chachkies.api
 springdoc.swagger-ui.csrf.enabled: true
 springdoc.swagger-ui.enabled: true
 
+spring.servlet.multipart.enabled: true
+spring.servlet.multipart.file-size-threshold: 2KB
+spring.servlet.multipart.max-file-size: 10MB
+spring.servlet.multipart.max-request-size: 10MB
+
 server.error.include-message: always
+
+minio:
+  key: "Q3AM3UQ867SPQQA43P2F"
+  secret: "uf+tfteSlswRu7BJ86wekitnifILbZam1KYY3TG"
+  url: "https://play.min.io"
+  bucket: "chachkies"
 
 management:
   health:
